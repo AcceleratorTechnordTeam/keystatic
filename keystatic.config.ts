@@ -1,4 +1,4 @@
-import { collection, config, fields } from '@keystatic/core';
+import { config, fields, singleton } from '@keystatic/core';
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({});
 
@@ -11,44 +11,32 @@ export default config({
 		brand: { name: 'Twist' },
 	},
 
-	collections: {
-		hero: collection({
+	singletons: {
+		hero: singleton({
 			label: 'Hero',
-			slugField: 'title',
-			path: 'src/content/hero/*',
+			path: 'src/content/hero',
 			format: { data: 'json' },
 			schema: {
-				title: fields.slug({ name: { label: 'Title' } }),
+				title: fields.text({ label: 'Title' }),
 				paragraph: fields.text({ label: 'Paragraph' }),
-				/* content: fields.markdoc({ label: 'Content' }), */
-				/* image: fields.image({ label: 'Image' }), */
-				/* content: fields.markdoc({ label: 'Content' }), */
 			},
 		}),
-		feature: collection({
+		feature: singleton({
 			label: 'Feature',
-			slugField: 'title',
-			path: 'src/content/feature/*',
+			path: 'src/content/feature',
 			format: { data: 'json' },
 			schema: {
-				title: fields.slug({ name: { label: 'Title' } }),
+				title: fields.text({ label: 'Title' }),
 				paragraph: fields.text({ label: 'Paragraph' }),
-				/* content: fields.markdoc({ label: 'Content' }), */
-				/* image: fields.image({ label: 'Image' }), */
-				/* content: fields.markdoc({ label: 'Content' }), */
 			},
 		}),
-		contact: collection({
+		contact: singleton({
 			label: 'Contact',
-			slugField: 'title',
-			path: 'src/content/contact/*',
+			path: 'src/content/contact',
 			format: { data: 'json' },
 			schema: {
-				title: fields.slug({ name: { label: 'Title' } }),
+				title: fields.text({ label: 'Title' }),
 				paragraph: fields.text({ label: 'Paragraph' }),
-				/* content: fields.markdoc({ label: 'Content' }), */
-				/* image: fields.image({ label: 'Image' }), */
-				/* content: fields.markdoc({ label: 'Content' }), */
 			},
 		}),
 	},

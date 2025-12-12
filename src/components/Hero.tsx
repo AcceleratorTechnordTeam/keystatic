@@ -1,7 +1,7 @@
 import { reader } from '../lib/reader';
 
 export const Hero = async () => {
-	const hero = await reader.collections.hero.read('hero');
+	const hero = await reader.singletons.hero.read();
 
 	return (
 		<section className='h-screen w-full bg-red-500 flex flex-col items-center justify-center snap-start'>

@@ -1,7 +1,9 @@
 import { reader } from '../lib/reader';
 
 export const Contact = async () => {
-	const contact = await reader.collections.contact.read('contact');
+	const contact = await reader.singletons.contact.read();
+	const contactData = await reader.singletons;
+	console.log(contactData);
 
 	return (
 		<section className='h-screen w-full bg-green-500 flex flex-col items-center justify-center snap-start'>
