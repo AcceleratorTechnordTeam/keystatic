@@ -7,15 +7,45 @@ export default config({
 		kind: 'github',
 		repo: `${process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER}/${process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME}`,
 	},
+
 	collections: {
-		posts: collection({
-			label: 'Posts',
+		hero: collection({
+			label: 'Hero',
 			slugField: 'title',
 			path: 'src/content/*',
-			format: { contentField: 'content' },
+			format: { data: 'json' },
 			schema: {
 				title: fields.slug({ name: { label: 'Title' } }),
-				content: fields.markdoc({ label: 'Content' }),
+				paragraph: fields.text({ label: 'Paragraph' }),
+				/* content: fields.markdoc({ label: 'Content' }), */
+				/* image: fields.image({ label: 'Image' }), */
+				/* content: fields.markdoc({ label: 'Content' }), */
+			},
+		}),
+		feature: collection({
+			label: 'Feature',
+			slugField: 'title',
+			path: 'src/content/*',
+			format: { data: 'json' },
+			schema: {
+				title: fields.slug({ name: { label: 'Title' } }),
+				paragraph: fields.text({ label: 'Paragraph' }),
+				/* content: fields.markdoc({ label: 'Content' }), */
+				/* image: fields.image({ label: 'Image' }), */
+				/* content: fields.markdoc({ label: 'Content' }), */
+			},
+		}),
+		contact: collection({
+			label: 'Contact',
+			slugField: 'title',
+			path: 'src/content/*',
+			format: { data: 'json' },
+			schema: {
+				title: fields.slug({ name: { label: 'Title' } }),
+				paragraph: fields.text({ label: 'Paragraph' }),
+				/* content: fields.markdoc({ label: 'Content' }), */
+				/* image: fields.image({ label: 'Image' }), */
+				/* content: fields.markdoc({ label: 'Content' }), */
 			},
 		}),
 	},
