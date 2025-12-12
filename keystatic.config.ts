@@ -7,12 +7,15 @@ export default config({
 		kind: 'github',
 		repo: `${process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER}/${process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME}`,
 	},
+	ui: {
+		brand: { name: 'Twist' },
+	},
 
 	collections: {
 		hero: collection({
 			label: 'Hero',
 			slugField: 'title',
-			path: 'src/content/*',
+			path: 'src/content/hero/*',
 			format: { data: 'json' },
 			schema: {
 				title: fields.slug({ name: { label: 'Title' } }),
@@ -25,7 +28,7 @@ export default config({
 		feature: collection({
 			label: 'Feature',
 			slugField: 'title',
-			path: 'src/content/*',
+			path: 'src/content/feature/*',
 			format: { data: 'json' },
 			schema: {
 				title: fields.slug({ name: { label: 'Title' } }),
@@ -38,7 +41,7 @@ export default config({
 		contact: collection({
 			label: 'Contact',
 			slugField: 'title',
-			path: 'src/content/*',
+			path: 'src/content/contact/*',
 			format: { data: 'json' },
 			schema: {
 				title: fields.slug({ name: { label: 'Title' } }),
