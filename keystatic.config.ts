@@ -19,6 +19,10 @@ export default config({
 			schema: {
 				title: fields.text({ label: 'Title' }),
 				paragraph: fields.text({ label: 'Paragraph' }),
+				avatar: fields.image({
+					label: 'Avatar',
+					directory: 'public/images/download.jpg',
+				}),
 			},
 		}),
 		feature: singleton({

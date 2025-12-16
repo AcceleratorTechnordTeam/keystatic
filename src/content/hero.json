@@ -1,4 +1,5 @@
 {
-  "title": "Welcome to the Hero section",
-  "paragraph": "Test de paragraphe pour la section hero test local."
+	"title": "Welcome to the Hero section",
+	"paragraph": "Test de paragraphe pour la section hero test local.",
+	"avatar": "/images/download.jpg"
 }

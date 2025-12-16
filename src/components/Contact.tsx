@@ -1,4 +1,5 @@
 import { reader } from '../lib/reader';
+import { EmailSender } from './EmailSender';
 
 export const Contact = async () => {
 	const contact = await reader.singletons.contact.read();
@@ -11,6 +12,7 @@ export const Contact = async () => {
 			<p className='text-2xl font-bold text-white'>
 				{contact?.paragraph}
 			</p>
+			<EmailSender />
 		</section>
 	);
 };
